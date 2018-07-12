@@ -1,6 +1,6 @@
 {
     {
-      "name": "yangshaozhen/dd-composer",
+      "name": "zackge/test",
       "description": "Hello, Composer!",
       "type": "library",
       "require": {
