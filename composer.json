@@ -1,23 +1,21 @@
 {
+  "name": "zackge/test",
+  "description": "Hello, Composer!",
+  "type": "library",
+  "require": {
+    "php": ">=7.0"
+  },
+  "license": "MIT",
+  "authors": [
     {
-      "name": "zackge/test",
-      "description": "Hello, Composer!",
-      "type": "library",
-      "require": {
-        "php": ">=7.0"
-      },
-      "license": "MIT",
-      "authors": [
-        {
-          "name": "dd",
-          "email": "646961398@qq.com"
-        }
-      ],
-      "minimum-stability": "dev",
-      "autoload": {
-        "psr-4": {
-          "tlanyan\\": "test/"
-        }
-      }
+      "name": "dd",
+      "email": "646961398@qq.com"
     }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "tlanyan\\": "test/"
+    }
+  }
 }
