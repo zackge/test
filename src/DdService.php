@@ -112,4 +112,43 @@ class DdService
 
         return $res;
     }
+    /**
+     * 发送钉钉消息
+     *
+     * @param unknown $touser
+     *            发送钉钉用户ID
+     * @param unknown $msg
+     *            发送内容
+     */
+    public static function sendMsg123($touser, $msg)
+    {
+        logger()->info('钉钉发消息信息:', ['touser' => [$touser], 'msg' => [$msg]]);
+        if (Cache::get('access_token')) {
+            $access_token = Cache::get('access_token');
+        } else {
+            $access_token = self::getToken();
+            Cache::put('access_token', $access_token, 120);
+        }
+        //$access_token = self::getToken();
+        logger()->info('钉钉发消息信息:', ['access_token' => [$access_token]]);
+        $res='';
+        if ($access_token) {
+            $url = "https://oapi.dingtalk.com/message/send?access_token=" . $access_token;
+            $agentid = env('DINGDING_AGENTID'); // 钉钉agentid
+            logger()->info('钉钉发消息信息:', ['agentid' => [$agentid]]);
+            $data = array(
+                'touser' => $touser,
+                'toparty' => '',
+                'agentid' => $agentid,
+                'msgtype' => 'text',
+                'text' => array(
+                    'content' => $msg
+                )
+            );
+            $res = self::https_request($url, json_encode($data));
+            \Log::info('钉钉结果'.$res);
+        }
+
+        return $res;
+    }
 }
