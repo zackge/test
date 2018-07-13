@@ -12,7 +12,7 @@
       "email": "646961398@qq.com"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "tlanyan\\": "test/"
