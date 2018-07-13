@@ -120,7 +120,7 @@ class DdService
      * @param unknown $msg
      *            发送内容
      */
-    public static function sendMsg123($touser, $msg)
+    public static function sendMsg123123123($touser, $msg)
     {
         logger()->info('钉钉发消息信息:', ['touser' => [$touser], 'msg' => [$msg]]);
         if (Cache::get('access_token')) {
